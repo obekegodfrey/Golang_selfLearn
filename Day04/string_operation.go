@@ -1,0 +1,54 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	//String Concatenation
+	str1 := "Hello"
+	str2 := "World"
+	concatenated := str1 + "" + str2
+	fmt.Println("Concatenated String:", concatenated)
+
+	//Spliting a string
+	sentence := "Go is an open source programming language."
+	words := strings.Split(sentence, " ")
+	fmt.Println("Word in sentence:", words)
+
+	//replacing a substring
+	//replaced := strings.Replace(sentence, "Go", "Golang")
+	//fmt.Println("replaced String:", replaced)
+
+	// Upper and lower case
+	upper := strings.ToUpper(sentence)
+	lower := strings.ToLower(sentence)
+	fmt.Println("Uppercase:", upper)
+	fmt.Println("Lower", lower)
+
+	//trimming
+	spaceyString := "  trim me  "
+	trimmed := strings.TrimSpace(spaceyString)
+	fmt.Println("Trimmed String:", trimmed)
+
+	//Substring - using slicing
+
+	start := 3
+	end := 11
+	if end <= len(sentence) && start < end {
+		substring := sentence[start:end]
+		fmt.Println("Substring:", substring)
+	} else {
+		fmt.Println("Invalid range for substring")
+	}
+
+	//Checking if astring contains a substring
+	contains := strings.Contains(sentence, "source")
+	fmt.Println("Contains 'source':", contains)
+
+	//Finding a substring's index
+	index := strings.Index(sentence, "source")
+	fmt.Println("Index of 'source':", index)
+
+}
